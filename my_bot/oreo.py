@@ -5,7 +5,7 @@ img_path = str(os.getcwd() + '/data/Oreo_images/')
 
 
 def init():  # 将加载本地图片作为函数封装起来，以便后续作为模块使用
-    imge1 = cv2.cv2.imread(img_path + 'O.png', cv2.IMREAD_UNCHANGED)  # 上半饼
+    imge1 = cv2.imread(img_path + 'O.png', cv2.IMREAD_UNCHANGED)  # 上半饼
     imge2_temp = cv2.imread(img_path + 'R.png', cv2.IMREAD_UNCHANGED)  # 暂时的馅，后续要做缩小处理
     imge3 = cv2.imread(img_path + 'Ob.png', cv2.IMREAD_UNCHANGED)  # 下半饼
 
@@ -118,11 +118,13 @@ def draw(name):  # 这里传进来的的name是你定义的奥利奥字段，如
         img4 = png_extend(img4, 60)
         img4 = add_re(img4)
     cv2.imwrite(img_path + 'oreo.png', img4)  # 将最终图像保存为oreo.png
-    #return img_path + 'oreo.png'
+    return img_path + 'oreo.png'
      #以下被注释的代码用来临时调试使用，可将最终图片自动展示出来，不用手动点开图片查看
+'''
     cv2.imshow('image', img4)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
     draw("奥奥")
+'''
